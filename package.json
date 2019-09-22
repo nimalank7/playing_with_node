@@ -1,0 +1,17 @@
+{
+  "name": "npm_script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "file.js",
+  "scripts": {
+    "server": "node file.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.2",
+    "nunjucks": "^3.2.0"
+  }
+}
