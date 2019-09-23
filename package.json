@@ -4,14 +4,21 @@
   "description": "",
   "main": "file.js",
   "scripts": {
-    "server": "node file.js"
+    "server": "node file.js",
+    "lint": "eslint file.js",
+    "test": "mocha './test/**/*.spec.js'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.2.0",
     "express": "^4.17.1",
+    "mocha": "^6.2.0",
     "nodemon": "^1.19.2",
     "nunjucks": "^3.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0"
   }
 }
