@@ -1,33 +1,20 @@
 var express = require('express')
+const axios = require('axios')
 const app = express();
-const birds = require('./birds.js')
-
-app.use(function logging(req, res, next) {
-    console.log("Global middleware!")
-    next();
-})
-
-app.use(function(req, res, next) {
-    res.write('<p>Hello World</p>')
-    next();
-});
-
-app.use('/middleware', function onlyMiddleware(req, res, next) {
-    console.log("This is the middleware unique to the middleware route");
-    next();
-})
-
-
-app.use('/birds', birds);
 
 app.get('/', (req, res) =>{
-    res.write('<p>Another paragraph</p>')
-    return res.end()
-});
+    axios.get('https://api.datamuse.com/words?sl=elefint')
+    .then(response => {
+        console.log(response.data);
 
-app.get('/middleware', (req, res) =>{
-    
-    return res.send('Middleware');
+        let words = response.data;
+        res.write(words[0].word)
+        res.end()
+    })
+    .catch(error => {
+        console.log(error);
+    })
+    res.write("Words are loading...")
 });
 
 app.listen(4242, () => {
