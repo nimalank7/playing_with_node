@@ -6,7 +6,8 @@
   "scripts": {
     "server": "node file.js",
     "lint": "eslint file.js",
-    "test": "mocha './test/**/*.spec.js'"
+    "test": "mocha './test/**/*.spec.js'",
+    "cypress:open": "cypress open"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +15,10 @@
   "dependencies": {
     "axios": "^0.19.0",
     "chai": "^4.2.0",
+    "cypress": "^3.4.1",
     "express": "^4.17.1",
     "mocha": "^6.2.0",
+    "nock": "^11.3.5",
     "nodemon": "^1.19.2",
     "nunjucks": "^3.2.0"
   },

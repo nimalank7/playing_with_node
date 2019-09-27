@@ -14,7 +14,7 @@ server.use(express.urlencoded({
 
 server.get('/', (req, res) =>{
     
-    return res.render('index.html');
+    return res.render('index.njk');
 });
 
 server.post('/form', (req, res) =>{
@@ -23,7 +23,7 @@ server.post('/form', (req, res) =>{
         url: req.body.url
     };
     
-    return res.render('form_values.html', model);
+    return res.render('form_values.njk', model);
 });
 
 server.listen(4242, () => {
